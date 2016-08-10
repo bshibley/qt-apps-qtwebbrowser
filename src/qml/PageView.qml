@@ -257,11 +257,12 @@ Rectangle {
                 color: "white"
                 Image {
                     id: placeholder
-                    y: placeholder.height - navigation.y
+                    y: (parent.height - navigation.height - placeholder.height)/2
                     anchors.horizontalCenter: parent.horizontalCenter
-                    source: "assets/icons/AppLogoColor.png"
+                    source: "assets/icons/Logo_sml_color.png"
                 }
-                Text {
+                /* Shibley: remove text */
+                /*Text {
                     id: label
                     anchors {
                         top: placeholder.bottom
@@ -272,7 +273,7 @@ Rectangle {
                     font.pixelSize: 28
                     color: uiColor
                     text: "Qt WebBrowser"
-                }
+                }*/
 
                 Behavior on opacity {
                     NumberAnimation { duration: animationDuration }

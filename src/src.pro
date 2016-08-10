@@ -7,12 +7,14 @@ SOURCES = \
     appengine.cpp \
     main.cpp \
     navigationhistoryproxymodel.cpp \
-    touchtracker.cpp
+    touchtracker.cpp \
+    brightness.cpp
 
 HEADERS = \
     appengine.h \
     navigationhistoryproxymodel.h \
     touchtracker.h \
+    brightness.h
 
 OTHER_FILES = \
     qml/assets/UIButton.qml \

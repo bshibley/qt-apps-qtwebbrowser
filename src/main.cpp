@@ -30,6 +30,7 @@
 #include "appengine.h"
 #include "navigationhistoryproxymodel.h"
 #include "touchtracker.h"
+#include "brightness.h"
 
 #if defined(DESKTOP_BUILD)
 #include "touchmockingapplication.h"
@@ -47,6 +48,14 @@ static QObject *engine_factory(QQmlEngine *engine, QJSEngine *scriptEngine)
     Q_UNUSED(scriptEngine);
     AppEngine *eng = new AppEngine();
     return eng;
+}
+
+static QObject *brightness_factory(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine);
+    Q_UNUSED(scriptEngine);
+    Brightness *inst = new Brightness();
+    return inst;
 }
 
 int main(int argc, char **argv)
@@ -80,6 +89,7 @@ int main(int argc, char **argv)
     qmlRegisterType<NavigationHistoryProxyModel>("WebBrowser", 1, 0, "SearchProxyModel");
     qmlRegisterType<TouchTracker>("WebBrowser", 1, 0, "TouchTracker");
     qmlRegisterSingletonType<AppEngine>("WebBrowser", 1, 0, "AppEngine", engine_factory);
+    qmlRegisterSingletonType<AppEngine>("WebBrowser", 1, 0, "Brightness", brightness_factory);
 
     QtWebEngine::initialize();
 
@@ -99,7 +109,7 @@ int main(int argc, char **argv)
 #if defined(DESKTOP_BUILD)
     view.show();
     if (view.size().isEmpty())
-        view.setGeometry(0, 0, 800, 600);
+        view.setGeometry(0, 0, 800, 480);
 #else
     view.showFullScreen();
 #endif

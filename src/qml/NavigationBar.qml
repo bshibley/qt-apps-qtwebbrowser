@@ -190,7 +190,21 @@ ToolBar {
             }
             color: uiColor
         }
+        Slider {
+            id:blSlider
+            Layout.fillWidth: true
+            maximumValue: 100.0
+            value: 100.0
+            updateValueWhileDragging: true
+
+            onValueChanged: {
+                value = Brightness.setLevel(value);
+            }
+        }
+
         TextField {
+            visible: false /* Shibley: hide URL text field */
+            state: disabled /* Shibley: disable URL text field*/
             id: urlBar
             Layout.fillWidth: true
             text: webView ? webView.url : ""
@@ -325,13 +339,15 @@ ToolBar {
             color: uiColor
             highlightColor: buttonPressedColor
             onClicked: {
-                if (homeScreen.state == "disabled" || homeScreen.state == "edit") {
+                /*if (homeScreen.state == "disabled" || homeScreen.state == "edit") {
                     homeScreen.messageBox.state = "disabled"
                     homeScreen.state = "enabled"
                     homeScreen.forceActiveFocus()
                 } else if (homeScreen.state != "disabled") {
                     homeScreen.state = "disabled"
-                }
+                }*/
+                /* Hard-code homepage */
+                load("http://www.toradex.com")
             }
         }
         Rectangle {
@@ -343,6 +359,8 @@ ToolBar {
             color: uiSeparatorColor
         }
         UIButton {
+            visible: false /* Shibley: hide page view button*/
+            state: disabled /* Shibley: disable page view button*/
             id: pageViewButton
             source: "icons/Btn_Tabs.png"
             color: uiColor
@@ -370,6 +388,8 @@ ToolBar {
             }
         }
         Rectangle {
+            visible: false /* Shibley: hide page view button separator*/
+            state: disabled /* Shibley: disable page view button separator*/
             width: 1
             anchors {
                 top: parent.top
@@ -378,6 +398,8 @@ ToolBar {
             color: uiSeparatorColor
         }
         UIButton {
+            visible: false /* Shibley: hide bookmarks button*/
+            state: disabled /* Shibley: disable bookmarks button*/
             id: bookmarksButton
             color: uiColor
             highlightColor: buttonPressedColor
@@ -401,6 +423,8 @@ ToolBar {
             Component.onCompleted: refresh()
         }
         Rectangle {
+            visible: false /* Shibley: hide bookmarks button separator*/
+            state: disabled /* Shibley: disable bookmarks button separator*/
             width: 1
             anchors {
                 top: parent.top
@@ -409,6 +433,8 @@ ToolBar {
             color: uiSeparatorColor
         }
         UIButton {
+            visible: false /* Shibley: hide settings button*/
+            state: disabled /* Shibley: disable settings button*/
             id: settingsButton
             source: "icons/Btn_Settings.png"
             color: uiColor

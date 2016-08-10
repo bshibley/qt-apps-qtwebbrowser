@@ -34,7 +34,7 @@ import "assets"
 Rectangle {
     id: homeScreen
 
-    property int padding: 60
+    property int padding: 40 /* default: 60 */
     property int cellSize: width / 5 - padding
     property alias messageBox: messageBox
     property alias count: gridView.count

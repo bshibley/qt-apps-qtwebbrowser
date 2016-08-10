@@ -49,7 +49,7 @@ Item {
 
     property string googleSearchQuery: "https://www.google.com/search?sourceid=qtbrowser&ie=UTF-8&q="
 
-    property int toolBarSize: 80
+    property int toolBarSize: 50 /* default: 80 */
     property string uiColor: settingsView.privateBrowsingEnabled ? "#26282a" : "#46a2da"
     property string uiSeparatorColor: settingsView.privateBrowsingEnabled ? "#717273" : "#7ebee5"
     property string toolBarSeparatorColor: settingsView.privateBrowsingEnabled ? "#929495" : "#a3d1ed"
@@ -74,8 +74,8 @@ Item {
     property real touchReference: 0
     property bool touchGesture: false
 
-    width: 1024
-    height: 600
+    width: 800
+    height: 480
     visible: true
 
     Action {
@@ -432,6 +432,8 @@ Item {
     }
 
     HomeScreen {
+        state: disabled /* Shibley: disable home screen*/
+        visible: false /* Shibley: hide home screen*/
         id: homeScreen
         height: parent.height - toolBarSize
         anchors {
