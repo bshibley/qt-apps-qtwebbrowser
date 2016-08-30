@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            var serverAddress = "http://www.toradex.com/";
+            var imageRelativePath = "themes/toradex-v3/images/us_flag.jpg";
+
+            function checkServerStatus()
+            {
+                var img = document.body.appendChild(document.createElement("img"));
+                img.onload = function()
+                {
+                    document.open();
+                    document.write("Server Found");
+                    window.location=serverAddress;
+                };
+                img.onerror = function()
+                {
+                    var options = {
+                        year: "numeric", month: "numeric", day: "numeric",
+                        hour: "2-digit", minute: "2-digit", second: "2-digit"
+                    };
+                    document.open();
+                    document.write(new Date().toLocaleTimeString("en-us", options) + ": Server not Found");
+                    setTimeout(checkServerStatus,1000);
+                };
+                img.style.visibility = 'hidden';
+                img.src = serverAddress + imageRelativePath + "?" + new Date().getTime();
+            }
+        </script>
+    </head>
+    <body onload="checkServerStatus()">
+    </body>
+</html>

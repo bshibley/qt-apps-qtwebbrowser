@@ -33,5 +33,6 @@
         <file>qml/Keyboard.qml</file>
         <file>qml/Main.qml</file>
         <file>qml/assets/icons/Logo_sml_color.png</file>
+        <file>landing.html</file>
     </qresource>
 </RCC>

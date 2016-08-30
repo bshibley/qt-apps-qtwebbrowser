@@ -43,3 +43,5 @@ RESOURCES += resources.qrc
     target.path =/data/user/qt/qtwebbrowser-app
     INSTALLS += target
 }
+
+DISTFILES +=

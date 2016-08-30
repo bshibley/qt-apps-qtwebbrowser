@@ -151,6 +151,8 @@ ToolBar {
 
         UIButton {
             id: backButton
+            visible: false /* Shibley: hide back button */
+            state: disabled /* Shibley: disable back button*/
             source: "icons/Btn_Back.png"
             color: uiColor
             highlightColor: buttonPressedColor
@@ -158,6 +160,8 @@ ToolBar {
             enabled: webView && webView.canGoBack
         }
         Rectangle {
+            visible: false /* Shibley: hide back button */
+            state: disabled /* Shibley: disable back button*/
             width: 1
             anchors {
                 top: parent.top
@@ -167,6 +171,8 @@ ToolBar {
         }
         UIButton {
             id: forwardButton
+            visible: false /* Shibley: hide forward button */
+            state: disabled /* Shibley: disable forward button*/
             source: "icons/Btn_Forward.png"
             color: uiColor
             highlightColor: buttonPressedColor
@@ -174,6 +180,8 @@ ToolBar {
             enabled: webView && webView.canGoForward
         }
         Rectangle {
+            visible: false /* Shibley: hide forward button */
+            state: disabled /* Shibley: disable forward button*/
             width: 1
             anchors {
                 top: parent.top
@@ -199,6 +207,10 @@ ToolBar {
 
             onValueChanged: {
                 value = Brightness.setLevel(value);
+            }
+
+            Component.onCompleted: {
+                value = Brightness.setLevel(100.0);
             }
         }
 
@@ -347,7 +359,7 @@ ToolBar {
                     homeScreen.state = "disabled"
                 }*/
                 /* Hard-code homepage */
-                load("http://www.toradex.com")
+                load("file:///home/root/landing.html")
             }
         }
         Rectangle {
