@@ -40,8 +40,10 @@ RESOURCES += resources.qrc
     HEADERS += touchmockingapplication.h
     QT += gui-private
 } else {
-    target.path =/data/user/qt/qtwebbrowser-app
-    INSTALLS += target
+    target.path = /data/user/qt/qtwebbrowser-app
+    target2.files = landing.html
+    target2.path = /data/user/qt/qtwebbrowser-app
+    INSTALLS += target target2
 }
 
 DISTFILES +=
