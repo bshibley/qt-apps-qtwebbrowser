@@ -38,6 +38,7 @@ AppEngine::AppEngine(QObject *parent)
     : QObject(parent)
     , m_settings(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) % QDir::separator() % "settings.ini", QSettings::IniFormat, this)
 {
+    m_initialUrl = "file:///home/root/landing.html";
     foreach (const QString &arg, QCoreApplication::arguments().mid(1)) {
         if (arg.startsWith('-'))
             continue;

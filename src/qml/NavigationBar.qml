@@ -358,8 +358,8 @@ ToolBar {
                 } else if (homeScreen.state != "disabled") {
                     homeScreen.state = "disabled"
                 }*/
-                /* Hard-code homepage */
-                load("file:///home/root/landing.html")
+                /* Set homepage to initial URL */
+                load(AppEngine.initialUrl)
             }
         }
         Rectangle {
