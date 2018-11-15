@@ -163,10 +163,7 @@ ToolBar {
             visible: false /* Shibley: hide back button */
             state: disabled /* Shibley: disable back button*/
             width: 1
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiSeparatorColor
         }
         UIButton {
@@ -183,19 +180,13 @@ ToolBar {
             visible: false /* Shibley: hide forward button */
             state: disabled /* Shibley: disable forward button*/
             width: 1
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiSeparatorColor
         }
         Rectangle {
             Layout.fillWidth: true
             implicitWidth: 10
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiColor
         }
         Slider {
@@ -312,10 +303,7 @@ ToolBar {
             visible: !cancelButton.visible
             Layout.fillWidth: true
             implicitWidth: 10
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiColor
         }
 
@@ -339,10 +327,7 @@ ToolBar {
         }
         Rectangle {
             width: 1
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiSeparatorColor
         }
         UIButton {
@@ -364,10 +349,7 @@ ToolBar {
         }
         Rectangle {
             width: 1
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiSeparatorColor
         }
         UIButton {
@@ -403,10 +385,7 @@ ToolBar {
             visible: false /* Shibley: hide page view button separator*/
             state: disabled /* Shibley: disable page view button separator*/
             width: 1
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiSeparatorColor
         }
         UIButton {
@@ -438,10 +417,7 @@ ToolBar {
             visible: false /* Shibley: hide bookmarks button separator*/
             state: disabled /* Shibley: disable bookmarks button separator*/
             width: 1
-            anchors {
-                top: parent.top
-                bottom: parent.bottom
-            }
+            height: parent.height
             color: uiSeparatorColor
         }
         UIButton {

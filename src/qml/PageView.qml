@@ -296,10 +296,7 @@ Rectangle {
                     anchors.fill: parent
                     Rectangle {
                         width: 5
-                        anchors {
-                            top: parent.top
-                            bottom: parent.bottom
-                        }
+                        height: parent.height
                         color: uiColor
                     }
                     TextField {
@@ -325,18 +322,12 @@ Rectangle {
                     }
                     Rectangle {
                         width: 5
-                        anchors {
-                            top: parent.top
-                            bottom: parent.bottom
-                        }
+                        height: parent.height
                         color: uiColor
                     }
                     Rectangle {
                         width: 1
-                        anchors {
-                            top: parent.top
-                            bottom: parent.bottom
-                        }
+                        height: parent.height
                         color: uiSeparatorColor
                     }
                     UIButton {
@@ -347,10 +338,7 @@ Rectangle {
                     }
                     Rectangle {
                         width: 1
-                        anchors {
-                            top: parent.top
-                            bottom: parent.bottom
-                        }
+                        height: parent.height
                         color: uiSeparatorColor
                     }
                     UIButton {
@@ -361,10 +349,7 @@ Rectangle {
                     }
                     Rectangle {
                         width: 1
-                        anchors {
-                            top: parent.top
-                            bottom: parent.bottom
-                        }
+                        height: parent.height
                         color: uiSeparatorColor
                     }
                     UIButton {

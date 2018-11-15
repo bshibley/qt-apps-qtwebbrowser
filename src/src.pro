@@ -39,11 +39,13 @@ RESOURCES += resources.qrc
     SOURCES += touchmockingapplication.cpp
     HEADERS += touchmockingapplication.h
     QT += gui-private
+    isEmpty(INSTALL_PREFIX): INSTALL_PREFIX=/usr/local/bin
 } else {
-    target.path = /data/user/qt/qtwebbrowser-app
-    target2.files = landing.html
-    target2.path = /data/user/qt/qtwebbrowser-app
-    INSTALLS += target target2
+    # Path for Qt for Device Creation
+    isEmpty(INSTALL_PREFIX): INSTALL_PREFIX=/data/user/qt/qtwebbrowser-app
 }
 
-DISTFILES +=
+target.path = $$INSTALL_PREFIX
+target2.files = landing.html
+target2.path = $$INSTALL_PREFIX
+INSTALLS += target target2

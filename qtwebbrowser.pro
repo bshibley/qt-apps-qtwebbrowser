@@ -1,7 +1,8 @@
 TEMPLATE = subdirs
-SUBDIRS = src
 
-QTWEBBROWSER_VERSION = 1.0.0
-QTWEBBROWSER_VERSION_TAG = 100
+SUBDIRS = \
+    doc \
+    src
 
-include(doc/doc.pri)
+requires(qtHaveModule(webengine))
+
